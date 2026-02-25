@@ -27,6 +27,24 @@ app.use(
 router.get('/', (request, response) => {
     response.sendFile(path.join(__dirname, '../frontend/html/index.html'));
 });
+router.get('/hozzaadas', (request, response) => {
+    response.sendFile(path.join(__dirname, '../frontend/html/hozzaadas.html'));
+});
+router.get('/megtekintes', (request, response) => {
+    response.sendFile(path.join(__dirname, '../frontend/html/megtekintes.html'));
+});
+router.get('/feladat2', (request, response) => {
+    response.sendFile(path.join(__dirname, '../frontend/html/feladat2.html'));
+});
+router.get('/hozzaadas2', (request, response) => {
+    response.sendFile(path.join(__dirname, '../frontend/html/hozzaadas2.html'));
+});
+router.get('/megtekintes2', (request, response) => {
+    response.sendFile(path.join(__dirname, '../frontend/html/megtekintes2.html'));
+});
+router.get('/autoSzerkesztes', (request, response) => {
+    response.sendFile(path.join(__dirname, '../frontend/html/autoSzerkesztes.html'));
+});
 
 //!API endpoints
 app.use('/', router);

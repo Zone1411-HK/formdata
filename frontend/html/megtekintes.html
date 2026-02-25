@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="hu">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Főoldal</title>
+        <!--!Bootstrap-->
+        <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css" />
+        <!--?Popper: dropdowns, popovers, tooltips-->
+        <script src="../bootstrap/js/popper.min.js"></script>
+        <script src="../bootstrap/js/bootstrap.min.js"></script>
+        <!--!CSS-->
+        <link rel="stylesheet" href="../css/index.css" />
+        <!--!JavaScript-->
+        <script src="../javascript/megtekintes.js"></script>
+    </head>
+    <body>
+        <nav class="navbar bg-dark" data-bs-theme="dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="megtekintes">Megtekintés</a>
+                <a class="navbar-brand" href="/">Főoldal</a>
+                <a class="navbar-brand" href="hozzaadas">Új könyv</a>
+            </div>
+        </nav>
+        <div class="container-fluid">
+            <div class="row text-center">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Cím</th>
+                            <th scope="col">Szerző</th>
+                            <th scope="col">Kiadó</th>
+                            <th scope="col">Kiadás éve</th>
+                            <th scope="col">Oldal szám</th>
+                            <th scope="col">Műfaj</th>
+                            <th scope="col">Ár</th>
+                        </tr>
+                    </thead>
+                    <tbody id="konyvTable"></tbody>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>

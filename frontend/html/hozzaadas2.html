@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="hu">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Főoldal</title>
+        <!--!Bootstrap-->
+        <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css" />
+        <!--?Popper: dropdowns, popovers, tooltips-->
+        <script src="../bootstrap/js/popper.min.js"></script>
+        <script src="../bootstrap/js/bootstrap.min.js"></script>
+        <!--!CSS-->
+        <link rel="stylesheet" href="../css/index.css" />
+        <!--!JavaScript-->
+        <script src="../javascript/ujkonyv.js"></script>
+    </head>
+    <body>
+        <nav class="navbar bg-dark" data-bs-theme="dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="hozzaadas">Új könyv</a>
+                <a class="navbar-brand" href="/">Főoldal</a>
+                <a class="navbar-brand" href="megtekintes">Megtekintés</a>
+            </div>
+        </nav>
+        <div class="container-fluid">
+            <div class="row text-center">
+                <form name="ujKonyv" id="ujKonyv" enctype="multipart/form-data">
+                    <input type="text" name="cim" class="form-control" placeholder="cím" />
+                    <input type="text" name="szerzo" class="form-control" placeholder="szerző" />
+                    <input type="text" name="kiado" class="form-control" placeholder="kiadó" />
+                    <input type="number" name="ev" class="form-control" placeholder="év" />
+                    <input
+                        type="number"
+                        name="oldal"
+                        class="form-control"
+                        placeholder="oldal szám"
+                    />
+                    <input type="text" name="mufaj" class="form-control" placeholder="műfaj" />
+                    <input type="number" name="ar" class="form-control" placeholder="ár" />
+                    <input type="button" id="leadas" value="Hozzáadás" class="form-control" />
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

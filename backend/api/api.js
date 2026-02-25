@@ -41,4 +41,21 @@ router.get('/testsql', async (request, response) => {
     }
 });
 
+router.post('/ujkonyv', upload.none(), async (request, response) => {
+    const { cim, szerzo, kiado, ev, oldal, mufaj, ar } = request.body;
+    const sqlCall = await database.ujkonyv(cim, szerzo, kiado, ev, oldal, mufaj, ar);
+    response.status(200).json({
+        status: sqlCall,
+        data: request.body
+    });
+});
+
+router.get('/konyvek', async (request, response) => {
+    const konyvek = await database.konyvek();
+    response.status(200).json({
+        status: 'success',
+        data: konyvek
+    });
+});
+
 module.exports = router;
