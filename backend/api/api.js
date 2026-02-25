@@ -50,6 +50,35 @@ router.post('/ujkonyv', upload.none(), async (request, response) => {
     });
 });
 
+router.post('/ujauto', upload.none(), async (request, response) => {
+    const {
+        marka,
+        modell,
+        gyartas,
+        alvazszam,
+        loero,
+        kilometer,
+        uzemanyag,
+        fogyasztas,
+        uzemanyagSzint
+    } = request.body;
+    const sqlCall = await database.ujauto(
+        marka,
+        modell,
+        gyartas,
+        alvazszam,
+        loero,
+        kilometer,
+        uzemanyag,
+        fogyasztas,
+        uzemanyagSzint
+    );
+    response.status(200).json({
+        status: sqlCall,
+        data: request.body
+    });
+});
+
 router.get('/konyvek', async (request, response) => {
     const konyvek = await database.konyvek();
     response.status(200).json({

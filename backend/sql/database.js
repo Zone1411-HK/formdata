@@ -10,6 +10,16 @@ const pool = mysql.createPool({
     queueLimit: 0
 });
 
+const pool2 = mysql.createPool({
+    host: '127.0.0.1',
+    user: 'root',
+    password: '',
+    database: 'autokdb',
+    waitForConnections: true,
+    connectionLimit: 10,
+    queueLimit: 0
+});
+
 //!SQL Queries
 async function selectall() {
     const query = 'SELECT * FROM exampletable;';
@@ -38,9 +48,44 @@ async function konyvek() {
     const [rows] = await pool.execute(sql);
     return rows;
 }
+
+async function ujauto(
+    marka,
+    modell,
+    gyartas,
+    alvazszam,
+    loero,
+    kilometer,
+    uzemanyag,
+    fogyasztas,
+    uzemanyagSzint
+) {
+    try {
+        const sql = `
+        INSERT INTO auto(marka, modell, gyartas, alvazszam, loero, kilometer, uzemanyag, fogyasztas, allas)
+        VALUES(?,?,?,?,?,?,?,?,?);
+        `;
+        await pool2.execute(sql, [
+            marka,
+            modell,
+            gyartas,
+            alvazszam,
+            loero,
+            kilometer,
+            uzemanyag,
+            fogyasztas,
+            uzemanyagSzint
+        ]);
+        return 'success';
+    } catch (error) {
+        throw new Error(error);
+    }
+}
+
 //!Export
 module.exports = {
     selectall,
     ujkonyv,
-    konyvek
+    konyvek,
+    ujauto
 };

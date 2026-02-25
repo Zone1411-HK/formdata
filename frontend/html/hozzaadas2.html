@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="hu">
     <head>
         <meta charset="UTF-8" />
@@ -12,7 +12,7 @@
         <!--!CSS-->
         <link rel="stylesheet" href="../css/index.css" />
         <!--!JavaScript-->
-        <script src="../javascript/ujkonyv.js"></script>
+        <script src="../javascript/ujauto.js"></script>
     </head>
     <body>
         <nav class="navbar bg-dark" data-bs-theme="dark">
@@ -24,21 +24,58 @@
             </div>
         </nav>
         <div class="container-fluid">
-            <div class="row text-center">
-                <form name="ujKonyv" id="ujKonyv" enctype="multipart/form-data">
-                    <input type="text" name="cim" class="form-control" placeholder="cím" />
-                    <input type="text" name="szerzo" class="form-control" placeholder="szerző" />
-                    <input type="text" name="kiado" class="form-control" placeholder="kiadó" />
-                    <input type="number" name="ev" class="form-control" placeholder="év" />
+            <div class="row text-center d-flex flex-column gap-3 w-100 py-5 align-items-center">
+                <form
+                    name="ujauto"
+                    id="ujauto"
+                    enctype="multipart/form-data"
+                    class="d-flex flex-column gap-3 w-25"
+                >
+                    <input class="form-control" type="text" name="marka" placeholder="Márka" />
+                    <input class="form-control" type="text" name="modell" placeholder="Modell" />
                     <input
-                        type="number"
-                        name="oldal"
                         class="form-control"
-                        placeholder="oldal szám"
+                        type="number"
+                        name="gyartas"
+                        placeholder="Gyártási év"
                     />
-                    <input type="text" name="mufaj" class="form-control" placeholder="műfaj" />
-                    <input type="number" name="ar" class="form-control" placeholder="ár" />
-                    <input type="button" id="leadas" value="Hozzáadás" class="form-control" />
+                    <input
+                        class="form-control"
+                        type="text"
+                        name="alvazszam"
+                        placeholder="Alvázszám"
+                    />
+                    <input class="form-control" type="number" name="loero" placeholder="Lóerő" />
+                    <input
+                        class="form-control"
+                        type="number"
+                        name="kilometer"
+                        placeholder="Kilométer óra állás"
+                    />
+                    <input
+                        class="form-control"
+                        type="text"
+                        name="uzemanyag"
+                        placeholder="Üzemanyag típusa"
+                    />
+                    <input
+                        class="form-control"
+                        type="number"
+                        name="fogyasztas"
+                        placeholder="Fogyasztás"
+                    />
+                    <input
+                        class="form-control"
+                        type="number"
+                        name="uzemanyagSzint"
+                        placeholder="Üzemanyag szint"
+                    />
+                    <input
+                        type="button"
+                        id="leadas"
+                        value="Hozzáadás"
+                        class="form-control btn btn-primary"
+                    />
                 </form>
             </div>
         </div>
