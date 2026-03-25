@@ -49,6 +49,15 @@ async function konyvek() {
     return rows;
 }
 
+async function autok() {
+    const sql = `
+    SELECT * 
+    FROM auto
+    `;
+    const [rows] = await pool2.execute(sql);
+    return rows;
+}
+
 async function ujauto(
     marka,
     modell,
@@ -87,5 +96,6 @@ module.exports = {
     selectall,
     ujkonyv,
     konyvek,
-    ujauto
+    ujauto,
+    autok
 };

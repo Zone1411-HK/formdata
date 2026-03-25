@@ -87,4 +87,12 @@ router.get('/konyvek', async (request, response) => {
     });
 });
 
+router.get('/autok', async (request, response) => {
+    const autok = await database.autok();
+    response.status(200).json({
+        status: 'success',
+        data: autok
+    });
+});
+
 module.exports = router;
