@@ -91,11 +91,22 @@ async function ujauto(
     }
 }
 
+async function auto(id) {
+    const sql = `
+    SELECT marka, modell, gyartas, alvazszam, loero, kilometer, uzemanyag, fogyasztas, allas
+    FROM auto
+    WHERE id = ?
+    `;
+    const [rows] = await pool2.execute(sql, [id]);
+    return rows[0];
+}
+
 //!Export
 module.exports = {
     selectall,
     ujkonyv,
     konyvek,
     ujauto,
-    autok
+    autok,
+    auto
 };

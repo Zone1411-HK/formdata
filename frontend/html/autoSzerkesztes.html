@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="hu">
     <head>
         <meta charset="UTF-8" />
@@ -26,6 +26,58 @@
         <div class="container-fluid">
             <div class="row text-center w-25">
                 <select id="autok"></select>
+                <form
+                    name="ujauto"
+                    id="ujauto"
+                    enctype="multipart/form-data"
+                    class="d-flex flex-column gap-3 w-100"
+                >
+                    <input class="form-control" type="text" name="marka" placeholder="Márka" />
+                    <input class="form-control" type="text" name="modell" placeholder="Modell" />
+                    <input
+                        class="form-control"
+                        type="number"
+                        name="gyartas"
+                        placeholder="Gyártási év"
+                    />
+                    <input
+                        class="form-control"
+                        type="text"
+                        name="alvazszam"
+                        placeholder="Alvázszám"
+                    />
+                    <input class="form-control" type="number" name="loero" placeholder="Lóerő" />
+                    <input
+                        class="form-control"
+                        type="number"
+                        name="kilometer"
+                        placeholder="Kilométer óra állás"
+                    />
+                    <input
+                        class="form-control"
+                        type="text"
+                        name="uzemanyag"
+                        placeholder="Üzemanyag típusa"
+                    />
+                    <input
+                        class="form-control"
+                        type="number"
+                        name="fogyasztas"
+                        placeholder="Fogyasztás"
+                    />
+                    <input
+                        class="form-control"
+                        type="number"
+                        name="uzemanyagSzint"
+                        placeholder="Üzemanyag szint"
+                    />
+                    <input
+                        type="button"
+                        id="leadas"
+                        value="Hozzáadás"
+                        class="form-control btn btn-primary"
+                    />
+                </form>
             </div>
         </div>
     </body>

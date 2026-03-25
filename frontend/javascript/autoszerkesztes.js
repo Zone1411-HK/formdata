@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     generateSelect();
+    document.getElementById('autok').addEventListener('change', loadAuto);
 });
 
 async function generateSelect() {
@@ -15,6 +16,16 @@ async function generateSelect() {
 
             select.appendChild(option);
         }
+    }
+}
+
+async function loadAuto() {
+    const { results } = await Get('/api/getAuto/' + this.value);
+    let values = Object.values(results);
+
+    const form = document.getElementById('ujauto');
+    for (let i = 0; i < form.children.length - 1; i++) {
+        form.children[i].value = values[i];
     }
 }
 

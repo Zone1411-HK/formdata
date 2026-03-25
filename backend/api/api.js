@@ -95,4 +95,10 @@ router.get('/autok', async (request, response) => {
     });
 });
 
+router.get('/getAuto/:id', async (request, response) => {
+    const id = request.params.id;
+    const auto = await database.auto(id);
+    response.status(200).json({ results: auto });
+});
+
 module.exports = router;
